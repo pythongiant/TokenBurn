@@ -36,6 +36,7 @@ git clone https://github.com/yourname/tokenburn.git
 cd tokenburn
 pip install -r requirements.txt
 ```
+
 ---
 
 ## ⚡ Quickstart
@@ -68,18 +69,19 @@ print("KL Divergence vs. uniform:", tb.kl_divergence(logprobs, baseline="uniform
 
 * Confidence score from token logprobs:
 
-  $$
-  PPL = e^{-\frac{1}{N} \sum_{i=1}^N \log p(x_i)}
-  $$
-* **Low (≈1–20)** → confident prediction.
-* **High (>50)** → uncertain, likely hallucination.
+$$
+\text{PPL} = \exp\Bigg(-\frac{1}{N} \sum_{i=1}^N \log p(x_i)\Bigg)
+$$
+
+* **Low (≈1–20)** → confident prediction
+* **High (>50)** → uncertain, likely hallucination
 
 ---
 
 ### 🔹 Hallucination Risk
 
-* Combines **entropy** (spread of probability distribution) + **variance** (instability of logprobs).
-* Risk levels: **LOW / MEDIUM / HIGH**.
+* Combines **entropy** (spread of probability distribution) + **variance** (instability of logprobs)
+* Risk levels: **LOW / MEDIUM / HIGH**
 
 ---
 
@@ -87,10 +89,11 @@ print("KL Divergence vs. uniform:", tb.kl_divergence(logprobs, baseline="uniform
 
 * Scaling law for reasoning length:
 
-  $$
-  k^* ≈ \sqrt{\frac{αn}{H_{cot}(B_0 - B_{opt})}} \cdot \log_2\left(\tfrac{1}{\epsilon}\right)
-  $$
-* Predicts how many reasoning steps are optimal before diminishing returns.
+$$
+k^* \approx \sqrt{\frac{\alpha n}{H_\text{cot} (B_0 - B_\text{opt})}} \cdot \log_2\Big(\frac{1}{\epsilon}\Big)
+$$
+
+* Predicts how many reasoning steps are optimal before diminishing returns
 
 ---
 
@@ -98,21 +101,21 @@ print("KL Divergence vs. uniform:", tb.kl_divergence(logprobs, baseline="uniform
 
 * **Entropy (H)** – Uncertainty of the model:
 
-  $$
-  H(p) = -\sum_x p(x) \log p(x)
-  $$
+$$
+H(p) = -\sum_x p(x) \log p(x)
+$$
 
-* **KL Divergence (Dₖₗ)** – How much the model’s distribution deviates from a baseline:
+* **KL Divergence (D\_\text{KL})** – How much the model’s distribution deviates from a baseline:
 
-  $$
-  D_{KL}(p || q) = \sum_x p(x) \log \frac{p(x)}{q(x)}
-  $$
+$$
+D_\text{KL}(p || q) = \sum_x p(x) \log \frac{p(x)}{q(x)}
+$$
 
 * **Mutual Information (I)** – Measures how much knowing the context reduces uncertainty about the next token:
 
-  $$
-  I(X;Y) = H(X) - H(X|Y)
-  $$
+$$
+I(X;Y) = H(X) - H(X|Y)
+$$
 
 These metrics give a **principled, information-theoretic view** of model confidence and hallucination risk.
 
@@ -131,10 +134,10 @@ tokenburn/
 
 ## ✅ Example Use Cases
 
-* Detect when your LLM is **guessing vs. confident**.
-* Use entropy & KL divergence for **early hallucination detection**.
-* Benchmark models on **information-theoretic efficiency**.
-* Tune reasoning dynamically with **optimal CoT scaling**.
+* Detect when your LLM is **guessing vs. confident**
+* Use entropy & KL divergence for **early hallucination detection**
+* Benchmark models on **information-theoretic efficiency**
+* Tune reasoning dynamically with **optimal CoT scaling**
 
 ---
 
@@ -149,6 +152,7 @@ tokenburn/
 
 ## 📜 License
 
-MIT License – free to use and modify.
+MIT License – free to use and modify
 
 ---
+
