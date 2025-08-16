@@ -105,7 +105,7 @@ $$
 H(p) = -\sum_x p(x) \log p(x)
 $$
 
-* **KL Divergence (D\_\text{KL})** – How much the model’s distribution deviates from a baseline:
+* **KL Divergence**  – How much the model’s distribution deviates from a baseline:
 
 $$
 D_\text{KL}(p || q) = \sum_x p(x) \log \frac{p(x)}{q(x)}
