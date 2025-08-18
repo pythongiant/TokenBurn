@@ -32,7 +32,7 @@ It works with any Hugging Face / OpenAI-compatible inference server that support
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourname/tokenburn.git
+git clone https://github.com/pythongiant/tokenburn.git
 cd tokenburn
 pip install -r requirements.txt
 ```
